@@ -202,5 +202,78 @@ namespace TranManagSysLibrary
                     trains.RemoveAt(i);
             return trains;
         }
+        /// <summary>
+        /// Возвращает список покупателей из базы данных
+        /// </summary>
+        /// <returns>Список покупателей</returns>
+        public static List<string> GetBuyers()
+        {
+            string query = "select Логин_пользователя from Пользователи where Права_доступа = 3";
+            OleDbCommand command = new OleDbCommand(query, connection);
+            OleDbDataReader result = command.ExecuteReader();
+            List<string> buyers = new List<string>();
+            while (result.Read())
+                buyers.Add(result[0].ToString());
+            result.Close();
+            return buyers;
+        }
+        /// <summary>
+        /// Обновление базы данных после продажи билета
+        /// </summary>
+        /// <param name="train">Массив поездов</param>
+        /// <param name="DeparturePoint">Пункт отправления</param>
+        /// <param name="ArrivalPoint">Пункт прибытия</param>
+        /// <returns>Возвращает удалось ли занести изменения в базу данных</returns>
+        public static bool UpdateAfterSell(string[] train, string DeparturePoint, string ArrivalPoint)
+        {
+            bool successful = true;
+            string[] route_pointes = train[1].Split('-');
+            string[] arr_available_seats = train[2].Split('-');
+            string available_seats = "";
+            int start = -1, end = -1;
+            for (int i = 0; i < route_pointes.Length; i++)
+            {
+                if (route_pointes[i] == ArrivalPoint)
+                    end = i;
+                else if (route_pointes[i] == DeparturePoint)
+                    start = i;
+                if (end != -1 && start != -1)
+                    break;
+            }
+            if (start < end)
+                for (int i = start; i < end; i++)
+                {
+                    if (int.Parse(arr_available_seats[i]) > 0)
+                        arr_available_seats[i] = (int.Parse(arr_available_seats[i]) - 1).ToString();
+                    else
+                    {
+                        successful = false;
+                        break;
+                    }
+                }
+            else
+                for (int i = start; i > end; i--)
+                {
+                    if (int.Parse(arr_available_seats[i]) > 0)
+                        arr_available_seats[i] = (int.Parse(arr_available_seats[i]) - 1).ToString();
+                    else
+                    {
+                        successful = false;
+                        break;
+                    }
+                }
+            if (successful == true)
+            {
+                for (int i = 0; i < arr_available_seats.Length; i++)
+                    available_seats += arr_available_seats[i] + "-";
+                available_seats = available_seats.Remove(available_seats.Length - 1);
+                string query = "update Поезда set Число_свободных_мест = '" + available_seats + "' where Номер_поезда = " + train[0];
+                OleDbCommand command = new OleDbCommand(query, connection);
+                command.ExecuteNonQuery();
+                return successful;
+            }
+            else
+                return successful;
+        }
     }
 }

@@ -38,6 +38,7 @@ namespace WindowsForms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.buttonSellTiket = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrains)).BeginInit();
             this.groupBoxSort.SuspendLayout();
             this.SuspendLayout();
@@ -145,11 +146,23 @@ namespace WindowsForms
             this.dateTimePicker.Visible = false;
             this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
+            // buttonSellTiket
+            // 
+            this.buttonSellTiket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonSellTiket.Location = new System.Drawing.Point(12, 326);
+            this.buttonSellTiket.Name = "buttonSellTiket";
+            this.buttonSellTiket.Size = new System.Drawing.Size(110, 23);
+            this.buttonSellTiket.TabIndex = 11;
+            this.buttonSellTiket.Text = "Продать билет";
+            this.buttonSellTiket.UseVisualStyleBackColor = true;
+            this.buttonSellTiket.Click += new System.EventHandler(this.buttonSellTiket_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 361);
+            this.Controls.Add(this.buttonSellTiket);
             this.Controls.Add(this.groupBoxSort);
             this.Controls.Add(this.dataGridViewTrains);
             this.Controls.Add(this.labelUser);
@@ -176,6 +189,7 @@ namespace WindowsForms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button buttonSellTiket;
     }
 }
 

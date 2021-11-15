@@ -132,5 +132,12 @@ namespace WindowsForms
                 UpdateDataGridView();
             }
         }
+        private void buttonSellTiket_Click(object sender, EventArgs e)
+        {
+            Form form = new SellForm();
+            form.ShowDialog();
+            trains = GetTrains();
+            UpdateDataGridView();
+        }
     }
 }
