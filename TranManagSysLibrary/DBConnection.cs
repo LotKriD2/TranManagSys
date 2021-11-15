@@ -42,6 +42,31 @@ namespace TranManagSysLibrary
         public static bool ConnectionSuccessful
         { get { return connectionSuccessful; } }
         /// <summary>
+        /// Открывает отчет о проданных билетах
+        /// </summary>
+        public static void ShowSellTicketReport()
+        {
+            Application access = new Microsoft.Office.Interop.Access.Application();
+            string path = AppDomain.CurrentDomain.BaseDirectory + "DataBase.mdb";
+            access.OpenCurrentDatabase(path, true);
+
+            access.DoCmd.OutputTo(AcOutputObjectType.acOutputReport,
+            "Проданные_билеты",
+            ".pdf",
+            System.Reflection.Missing.Value,
+            System.Reflection.Missing.Value,
+            System.Reflection.Missing.Value,
+            AcExportQuality.acExportQualityPrint
+            );
+            /*access.DoCmd.OpenReport(
+            "Проданные_билеты",
+            Microsoft.Office.Interop.Access.AcView.acViewNormal,
+            System.Reflection.Missing.Value,
+            System.Reflection.Missing.Value
+            );*/
+            access.CloseCurrentDatabase();
+        }
+        /// <summary>
         /// Проверяет пользователя в базе данных 
         /// </summary>
         /// <param name="login">Логин пользователя</param>

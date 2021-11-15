@@ -36,6 +36,11 @@ namespace WindowsForms
             CreateDataGridView();
             trains = GetTrains();
             UpdateDataGridView();
+            if (AccessLevel == TranManagSysLibrary.AccessLevel.guest ||
+                AccessLevel == TranManagSysLibrary.AccessLevel.user)
+                buttonDB.Visible = false;
+            if (AccessLevel == TranManagSysLibrary.AccessLevel.guest)
+                buttonReportSellTicket.Visible = false;
         }
         private void CreateDataGridView()
         {
@@ -135,6 +140,17 @@ namespace WindowsForms
         private void buttonSellTiket_Click(object sender, EventArgs e)
         {
             Form form = new SellForm();
+            form.ShowDialog();
+            trains = GetTrains();
+            UpdateDataGridView();
+        }
+        private void buttonReportSellTicket_Click(object sender, EventArgs e)
+        {
+            ShowSellTicketReport();
+        }
+        private void buttonDB_Click(object sender, EventArgs e)
+        {
+            Form form = new DBForm();
             form.ShowDialog();
             trains = GetTrains();
             UpdateDataGridView();

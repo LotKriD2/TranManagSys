@@ -39,6 +39,8 @@ namespace WindowsForms
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.buttonSellTiket = new System.Windows.Forms.Button();
+            this.buttonReportSellTicket = new System.Windows.Forms.Button();
+            this.buttonDB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrains)).BeginInit();
             this.groupBoxSort.SuspendLayout();
             this.SuspendLayout();
@@ -157,11 +159,34 @@ namespace WindowsForms
             this.buttonSellTiket.UseVisualStyleBackColor = true;
             this.buttonSellTiket.Click += new System.EventHandler(this.buttonSellTiket_Click);
             // 
+            // buttonReportSellTicket
+            // 
+            this.buttonReportSellTicket.Location = new System.Drawing.Point(128, 326);
+            this.buttonReportSellTicket.Name = "buttonReportSellTicket";
+            this.buttonReportSellTicket.Size = new System.Drawing.Size(157, 23);
+            this.buttonReportSellTicket.TabIndex = 12;
+            this.buttonReportSellTicket.Text = "Отчет о проданных билетах";
+            this.buttonReportSellTicket.UseVisualStyleBackColor = true;
+            this.buttonReportSellTicket.Click += new System.EventHandler(this.buttonReportSellTicket_Click);
+            // 
+            // buttonDB
+            // 
+            this.buttonDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDB.Location = new System.Drawing.Point(584, 326);
+            this.buttonDB.Name = "buttonDB";
+            this.buttonDB.Size = new System.Drawing.Size(88, 23);
+            this.buttonDB.TabIndex = 13;
+            this.buttonDB.Text = "Работа с БД";
+            this.buttonDB.UseVisualStyleBackColor = true;
+            this.buttonDB.Click += new System.EventHandler(this.buttonDB_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 361);
+            this.Controls.Add(this.buttonDB);
+            this.Controls.Add(this.buttonReportSellTicket);
             this.Controls.Add(this.buttonSellTiket);
             this.Controls.Add(this.groupBoxSort);
             this.Controls.Add(this.dataGridViewTrains);
@@ -190,6 +215,8 @@ namespace WindowsForms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button buttonSellTiket;
+        private System.Windows.Forms.Button buttonReportSellTicket;
+        private System.Windows.Forms.Button buttonDB;
     }
 }
 

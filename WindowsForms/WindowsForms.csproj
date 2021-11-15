@@ -52,6 +52,12 @@
     <Compile Include="AthorizationForm.Designer.cs">
       <DependentUpon>AthorizationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBForm.Designer.cs">
+      <DependentUpon>DBForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     </Compile>
     <EmbeddedResource Include="AthorizationForm.resx">
       <DependentUpon>AthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBForm.resx">
+      <DependentUpon>DBForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
