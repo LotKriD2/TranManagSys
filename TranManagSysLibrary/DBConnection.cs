@@ -84,5 +84,83 @@ namespace TranManagSysLibrary
             result.Close();
             return cities;
         }
+        /// <summary>
+        /// Возвращает список поездов для отображения на главной форме
+        /// </summary>
+        /// <returns>Список поездов</returns>
+        public static List<string[]> GetTrains()
+        {
+            string query = "select Номер_поезда, Маршрут, Число_свободных_мест, Дата_отправления from Поезда " +
+                "left join Маршруты on Поезда.Номер_маршрута = Маршруты.Номер_маршрута";
+            OleDbCommand command = new OleDbCommand(query, connection);
+            OleDbDataReader result = command.ExecuteReader();
+            List<string[]> trains = new List<string[]>();
+            while (result.Read())
+                trains.Add(new string[4] { result[0].ToString(), result[1].ToString(), result[2].ToString(), result[3].ToString() });
+            result.Close();
+            CreateFullRoutes(ref trains);
+            FindTrains(ref trains);
+            return trains;
+        }
+        /// <summary>
+        /// Находит поезда соответствующие локации пользователя
+        /// </summary>
+        /// <param name="trains">Список поездов</param>
+        public static void FindTrains(ref List<string[]> trains)
+        {
+            List<string[]> result = new List<string[]>();
+            for (int i = 0; i < trains.Count; i++)
+                if (!trains[i][1].Contains(User.Location))
+                    trains.RemoveAt(i);
+        }
+        /// <summary>
+        /// Воссоздает маршрут поезда
+        /// </summary>
+        /// <param name="routes">Список маршрутов</param>
+        public static void CreateFullRoutes(ref List<string[]> routes)
+        {
+            List<string[]> cities = GetCities();
+            string[] route_points;
+            string route = "";
+            for (int i = 0; i < routes.Count; i++)
+            {
+                route = "";
+                route_points = routes[i][1].Split('-');
+                for (int j = 0; j < route_points.Length; j++)
+                    for (int k = 0; k < cities.Count; k++)
+                        if (cities[k][0] == route_points[j])
+                        {
+                            route += cities[k][1] + "-";
+                            break;
+                        }
+                route = route.Remove(route.Length - 1);
+                routes[i][1] = route;
+            }
+        }
+        /// <summary>
+        /// Поучить имена всех таблиц в базе данных
+        /// </summary>
+        /// <returns>Список таблиц</returns>
+        public static List<string> GetNameTables()
+        {
+            List<string> tables = new List<string>();
+            DataTable dataTable = connection.GetSchema("Tables", new[] { null, null, null, "TABLE" });
+            tables.AddRange(from DataRow item in dataTable.Rows select item["TABLE_NAME"].ToString());
+            return tables;
+        }
+        /// <summary>
+        /// Получить всю таблицу из базы данных
+        /// </summary>
+        /// <param name="NameTable">Имя таблицы</param>
+        /// <returns>Таблица</returns>
+        public static DataSet GetTable(string NameTable)
+        {
+            string query = "select * from " + NameTable;
+            OleDbCommand command = new OleDbCommand(query, connection);
+            OleDbDataAdapter result = new OleDbDataAdapter(command);
+            DataSet dataSet = new DataSet();
+            result.Fill(dataSet, NameTable);
+            return dataSet;
+        }
     }
 }
