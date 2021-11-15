@@ -162,5 +162,45 @@ namespace TranManagSysLibrary
             result.Fill(dataSet, NameTable);
             return dataSet;
         }
+        /// <summary>
+        /// Сортирует поезда по пункту прибытия и времени отправки
+        /// </summary>
+        /// <param name="trains">Список поездов</param>
+        /// <param name="arrivalPoint">Пункт прибытия</param>
+        /// <param name="dateTime">Дата отправки</param>
+        /// <returns>Отсортированый список поездов</returns>
+        public static List<string[]> SortTrains(List<string[]> trains, string arrivalPoint, DateTime dateTime)
+        {
+            for (int i = trains.Count - 1; i >= 0; i--)
+                if (!trains[i][1].Contains(arrivalPoint) || trains[i][3] != dateTime.ToString())
+                    trains.RemoveAt(i);
+            return trains;
+        }
+        /// <summary>
+        /// Сортирует поезда по пункту прибытия
+        /// </summary>
+        /// <param name="trains">Список поездов</param>
+        /// <param name="arrivalPoint">Пункт прибытия</param>
+        /// <returns>Отсортированный список поездов</returns>
+        public static List<string[]> SortTrains(List<string[]> trains, string arrivalPoint)
+        {
+            for (int i = trains.Count - 1; i >= 0; i--)
+                if (!trains[i][1].Contains(arrivalPoint))
+                    trains.RemoveAt(i);
+            return trains;
+        }
+        /// <summary>
+        /// Сортирует поезда по дате отправки
+        /// </summary>
+        /// <param name="trains">Список поездов</param>
+        /// <param name="dateTime">Время отправки</param>
+        /// <returns>Отсортированный список поездов</returns>
+        public static List<string[]> SortTrains(List<string[]> trains, DateTime dateTime)
+        {
+            for (int i = trains.Count - 1; i >= 0; i--)
+                if (trains[i][3] != dateTime.ToString())
+                    trains.RemoveAt(i);
+            return trains;
+        }
     }
 }
