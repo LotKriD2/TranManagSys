@@ -37,6 +37,33 @@ namespace WindowsForms
                 }
                 if (successful)
                 {
+                    string condition = "( Номер_билета, Покупатель, Поезд, Пункт_отбытия, Пункт_прибытия )";
+                    string[] preID = DateTime.Now.ToString().Split(' ');
+                    string id = "";
+                    string[] preId1;
+                    for (int i = 0; i < preID.Length; i++)
+                    {
+                        if (i == 0)
+                        {
+                            preId1 = preID[i].Split('.');
+                            id += preId1[0];
+                        }
+                        else
+                        {
+                            preId1 = preID[i].Split(':');
+                            for (int j = 0; j < preId1.Length; j++)
+                                id += preId1[j];
+                        }
+                    }
+                    Dictionary<string, int> cities = new Dictionary<string, int>();
+                    DataSet dataSet = GetTable("Города");
+                    for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+                        cities.Add(dataSet.Tables[0].Rows[i][1].ToString(), int.Parse(dataSet.Tables[0].Rows[i][0].ToString()));
+                    string values = "( " + id + ", '" + comboBoxBuyer.Text + "', "
+                        + comboBoxTrain.Text + ", " + cities[textBoxDeparturePoint.Text] + ", "
+                        + cities[comboBoxArrivalPoint.Text] + " )";
+                    condition = condition + " values " + values;
+                    AddEntry("Билеты", condition);
                     MessageBox.Show("Продажа успешна", "Уведомление", MessageBoxButtons.OK);
                     Form.ActiveForm.Close();
                 }

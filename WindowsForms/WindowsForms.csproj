@@ -46,6 +46,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEntryForms\AddAccessLevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntryForms\AddAccessLevelForm.Designer.cs">
+      <DependentUpon>AddAccessLevelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntryForms\AddCityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntryForms\AddCityForm.Designer.cs">
+      <DependentUpon>AddCityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntryForms\AddCompositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntryForms\AddCompositionForm.Designer.cs">
+      <DependentUpon>AddCompositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntryForms\AddEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntryForms\AddEntryForm.Designer.cs">
+      <DependentUpon>AddEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntryForms\AddRouteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntryForms\AddRouteForm.Designer.cs">
+      <DependentUpon>AddRouteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntryForms\AddTrainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntryForms\AddTrainForm.Designer.cs">
+      <DependentUpon>AddTrainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntryForms\AddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntryForms\AddUserForm.Designer.cs">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntryForms\AddWagonsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntryForms\AddWagonsForm.Designer.cs">
+      <DependentUpon>AddWagonsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +120,78 @@
     <Compile Include="SellForm.Designer.cs">
       <DependentUpon>SellForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateEntryForms\UpdateAccessLevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateAccessLevelForm.Designer.cs">
+      <DependentUpon>UpdateAccessLevelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateCityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateCityForm.Designer.cs">
+      <DependentUpon>UpdateCityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateCompositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateCompositionForm.Designer.cs">
+      <DependentUpon>UpdateCompositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateEntryForm.Designer.cs">
+      <DependentUpon>UpdateEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateRouteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateRouteForm.Designer.cs">
+      <DependentUpon>UpdateRouteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateTrainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateTrainForm.Designer.cs">
+      <DependentUpon>UpdateTrainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateUserForm.Designer.cs">
+      <DependentUpon>UpdateUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateWagonsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEntryForms\UpdateWagonsForm.Designer.cs">
+      <DependentUpon>UpdateWagonsForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddEntryForms\AddAccessLevelForm.resx">
+      <DependentUpon>AddAccessLevelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEntryForms\AddCityForm.resx">
+      <DependentUpon>AddCityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEntryForms\AddCompositionForm.resx">
+      <DependentUpon>AddCompositionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEntryForms\AddEntryForm.resx">
+      <DependentUpon>AddEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEntryForms\AddRouteForm.resx">
+      <DependentUpon>AddRouteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEntryForms\AddTrainForm.resx">
+      <DependentUpon>AddTrainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEntryForms\AddUserForm.resx">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEntryForms\AddWagonsForm.resx">
+      <DependentUpon>AddWagonsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AthorizationForm.resx">
       <DependentUpon>AthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +213,27 @@
     <EmbeddedResource Include="SellForm.resx">
       <DependentUpon>SellForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateEntryForms\UpdateAccessLevelForm.resx">
+      <DependentUpon>UpdateAccessLevelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateEntryForms\UpdateCityForm.resx">
+      <DependentUpon>UpdateCityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateEntryForms\UpdateCompositionForm.resx">
+      <DependentUpon>UpdateCompositionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateEntryForms\UpdateRouteForm.resx">
+      <DependentUpon>UpdateRouteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateEntryForms\UpdateTrainForm.resx">
+      <DependentUpon>UpdateTrainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateEntryForms\UpdateUserForm.resx">
+      <DependentUpon>UpdateUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateEntryForms\UpdateWagonsForm.resx">
+      <DependentUpon>UpdateWagonsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,5 +253,6 @@
       <Name>TranManagSysLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

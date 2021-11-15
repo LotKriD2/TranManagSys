@@ -300,5 +300,38 @@ namespace TranManagSysLibrary
             else
                 return successful;
         }
+        /// <summary>
+        /// Удаление записи из базы данных
+        /// </summary>
+        /// <param name="nameTable">Имя таблицы, из которой удаляется запись</param>
+        /// <param name="condition">Условие для отбора записи</param>
+        public static void DeleteEntry(string nameTable, string condition)
+        {
+            string query = "delete from " + nameTable + " where " + condition;
+            OleDbCommand command = new OleDbCommand(query, connection);
+            command.ExecuteNonQuery();
+        }
+        /// <summary>
+        /// Добавление записи в базу данных
+        /// </summary>
+        /// <param name="nameTable">Имя таблицы, в которую добаляется запись</param>
+        /// <param name="condition">Условие для занесения значений</param>
+        public static void AddEntry(string nameTable, string condition)
+        {
+            string query = "insert into " + nameTable + condition;
+            OleDbCommand command = new OleDbCommand(query, connection);
+            command.ExecuteNonQuery();
+        }
+        /// <summary>
+        /// Обновление записи в базе данных
+        /// </summary>
+        /// <param name="nameTable">Имя таблицы, в которой обновляется запись</param>
+        /// <param name="condition">Условие для обновления записи</param>
+        public static void UpdateEntry(string nameTable, string condition)
+        {
+            string query = "update " + nameTable + " " + condition;
+            OleDbCommand command = new OleDbCommand(query, connection);
+            command.ExecuteNonQuery();
+        }
     }
 }
