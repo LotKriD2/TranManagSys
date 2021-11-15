@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranManagSysLibrary", "Tran
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsForms", "WindowsForms\WindowsForms.csproj", "{7D2F7DBD-4089-46D7-AB34-062E69FCA32A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranManagSysUnitTestProject", "TranManagSysUnitTestProject\TranManagSysUnitTestProject.csproj", "{0DE36D85-98AB-4B34-B8F0-47D278F4DAA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7D2F7DBD-4089-46D7-AB34-062E69FCA32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D2F7DBD-4089-46D7-AB34-062E69FCA32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D2F7DBD-4089-46D7-AB34-062E69FCA32A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE36D85-98AB-4B34-B8F0-47D278F4DAA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE36D85-98AB-4B34-B8F0-47D278F4DAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE36D85-98AB-4B34-B8F0-47D278F4DAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE36D85-98AB-4B34-B8F0-47D278F4DAA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
